@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Manager</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>I'm extending the base template!</h2>
+
     {% for food_item in food_items %}
         {{ food_item.category_name }}<br>
         {{ food_item.item_name }}<br>
         {{ food_item.in_stock }}<br>
         {{ food_item.weight_or_quantity }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
