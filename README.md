@@ -1,4 +1,4 @@
-<h1 align="center">Your Neighbourhood Food Bank<h1>
+<h1 align="center">Stock Manager<h1>
 
 [View the live project here.](https://example.net)
 
@@ -37,3 +37,27 @@
     -   #### Imagery
 
 *   ### Wireframes
+
+## Features
+
+## Technologies
+
+### Languages Used
+
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+
+### Frameworks, Libraries & Programs Used
+
+1. [Font Awesome:](http://fontawesome.com/)
+    - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
+1. [jQuery:](http://jquery.com/)
+    - jQuery is used to ......
+1. [Git:](https://git-scm.com/)
+    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+1. [GitHub:](https://github.com/)
+    - GitHub is used to store the projects code after being pushed from Git.
+1. [Materialize:](https://materializecss.com/)
+    - Materialize is used to provide the main Nav Bar and the side Nav Bar.
+1. [MongoDB:](https://www.mongodb.com/)
+    - MongoDB is used to .....
