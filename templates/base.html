@@ -18,23 +18,30 @@
         <nav class="nav-extended text-shadow teal darken-1">
             <!-- top navbar -->
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Food Bank Stock Manager</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                <a href="{{ url_for('get_food_items') }}" class="brand-logo">Food Bank Stock Manager</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
+                    <li><a href="{{ url_for('get_food_items') }}">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">New Food Item</a></li>
+                    <li><a href="#">Manage Food Categories</a></li>
+                    <li><a href="#">Log Out</a></li>
+                    <li><a href="#">Log In</a></li>
+                    <li><a href="#">Register</a></li>
                 </ul>
             </div>
         </nav>
         
         <!-- mobile sidenav-->
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">Javascript</a></li>
-            <li><a href="mobile.html">Mobile</a></li>
+            <li><h4 class="center-align teal-text darken-1">Stock Manager</h4></li>
+            <li><a href="{{ url_for('get_food_items') }}">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">New Food Item</a></li>
+            <li><a href="#">Manage Food Categories</a></li>
+            <li><a href="#">Log Out</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Register</a></li>
         </ul>
     </header>
     
