@@ -1,28 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
-
+   
     
-
-    {% for food_item in food_items %}
-        {{ food_item.category_name }}<br>
-        {{ food_item.item_name }}<br>
-        {{ food_item.in_stock }}<br>
-        {{ food_item.weight_or_quantity }}<br>
-    {% endfor %}
-
         <ul class="collapsible popout">
+            {% for food_item in food_items %}
             <li>
-                <div class="collapsible-header white-text teal darken-1 text-shadow"><i class="fas fa-caret-down"></i>First</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                <div class="collapsible-header white-text teal darken-1 text-shadow">
+                    <i class="fas fa-caret-down"></i>
+                    <strong>{{ food_item.item_name }}</strong> : {{ food_item.category_name }} : {{ food_item.weight_or_quantity }} : {{ food_item.in_stock }}
+                </div>
+                <div class="collapsible-body">
+                    <span>Lorem ipsum dolor sit amet.</span>
+                </div>
             </li>
-            <li>
-                <div class="collapsible-header white-text teal darken-1 text-shadow"><i class="fas fa-caret-down"></i>Second</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header white-text teal darken-1 text-shadow"><i class="fas fa-caret-down"></i>Third</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
+            {% endfor %}
+           
         </ul>
 
 {% endblock %}
