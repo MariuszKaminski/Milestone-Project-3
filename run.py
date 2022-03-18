@@ -89,6 +89,11 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+@app.route("/add_food_item")
+def add_food_item():
+    return render_template("add_food_item.html")
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookies
