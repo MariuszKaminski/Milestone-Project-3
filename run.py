@@ -89,8 +89,11 @@ def profile(username):
     return redirect(url_for("login"))
 
 
-@app.route("/add_food_item")
+@app.route("/add_food_item", methods=["GET", "POST"])
 def add_food_item():
+    if request.method == "POST":
+        
+        mongo.db.food_items.insert_one()
     food_categories = mongo.db.food_categories.find().sort("category_name", 1)
     return render_template("add_food_item.html", food_categories=food_categories)
 
