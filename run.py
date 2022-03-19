@@ -91,7 +91,8 @@ def profile(username):
 
 @app.route("/add_food_item")
 def add_food_item():
-    return render_template("add_food_item.html")
+    food_categories = mongo.db.food_categories.find().sort("category_name", 1)
+    return render_template("add_food_item.html", food_categories=food_categories)
 
 
 @app.route("/logout")
