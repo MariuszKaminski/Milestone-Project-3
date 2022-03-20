@@ -92,8 +92,25 @@ def profile(username):
 @app.route("/add_food_item", methods=["GET", "POST"])
 def add_food_item():
     if request.method == "POST":
-        
-        mongo.db.food_items.insert_one()
+        stock = request.form.get("in_stock")
+        stock_int = int(stock)
+        low_stock = False
+        if stock_int <= 10:
+            low_stock = True
+
+        food_item = {
+            "item_name": request.form.get("item_name"),
+            "category_name": request.form.get("category_name"),
+            "in_stock": stock_int,
+            "weight_or_quantity": request.form.get("weight_or_quantity"),
+            "unit": request.form.get("unit"),
+            "low_stock": low_stock,
+            "created_by": session["user"]
+        }
+        mongo.db.food_items.insert_one(food_item)
+        flash("Food Item Successfully Added")
+        return redirect(url_for("get_food_items"))
+
     food_categories = mongo.db.food_categories.find().sort("category_name", 1)
     return render_template("add_food_item.html", food_categories=food_categories)
 
