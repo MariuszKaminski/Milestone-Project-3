@@ -6,10 +6,6 @@
     line-height: 2;
 }
 
-.collapsible-body span {
-    margin:10px;
-}
-
-.collapsible-header span {
-    margin:10px;
+.collapsible span {
+    margin-left:20px;
 }
