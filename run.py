@@ -122,6 +122,13 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+@app.route("/edit_food_item/<food_item_id>", methods=["GET", "POST"])
+def edit_food_item(food_item_id):
+    food_item = mongo.db.food_items.find_one({"_id": ObjectId(food_item_id)})
+
+    food_categories = mongo.db.food_categories.find().sort("category_name", 1)
+    return render_template("edit_food_item.html", food_item=food_item, food_categories=food_categories)
+
 
 if __name__ == "__main__":
     app.run(
