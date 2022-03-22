@@ -124,13 +124,29 @@ def logout():
     return redirect(url_for("login"))
 
 @app.route("/edit_food_item/<food_item_id>", methods=["GET", "POST"])
-def edit_food_item(food_item_id):
+def edit_food_item(food_item_id):    
+    if request.method == "POST":
+        stock = request.form.get("in_stock")
+        stock_int = int(stock)
+        low_stock = False
+        if stock_int <= 10:
+            low_stock = True
+
+        submit = {
+            "item_name": request.form.get("item_name"),
+            "category_name": request.form.get("category_name"),
+            "in_stock": stock_int,
+            "weight_or_quantity": request.form.get("weight_or_quantity"),
+            "unit": request.form.get("unit"),
+            "low_stock": low_stock,
+            "created_by": session["user"]
+        }
+        mongo.db.food_items.update({"_id": ObjectId(food_item_id)}, submit)
+        flash("Food Item Successfully Edited")
+
     food_item = mongo.db.food_items.find_one({"_id": ObjectId(food_item_id)})
-
     food_categories = mongo.db.food_categories.find().sort("category_name", 1)
-
-    units = mongo.db.units.find().sort("unit_name", 1)
-    
+    units = mongo.db.units.find().sort("unit_name", 1)    
     return render_template("edit_food_item.html", food_item=food_item, food_categories=food_categories, units=units)
 
 
