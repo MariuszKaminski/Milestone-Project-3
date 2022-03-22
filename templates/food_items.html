@@ -23,6 +23,8 @@
                         <em>Food item created by: {{ food_item.created_by }}</em>
                     </span>
                     <span>
+                        <a href="{{ url_for('delete_food_item', food_item_id=food_item._id) }}" class="waves-effect waves-light btn-small teal darken-1">Delete Item</a>
+                    <span>
                         <a href="{{ url_for('edit_food_item', food_item_id=food_item._id) }}" class="waves-effect waves-light btn-small teal darken-1">Edit Item</a>
                     </span>
                     <span>

@@ -141,13 +141,20 @@ def edit_food_item(food_item_id):
             "low_stock": low_stock,
             "created_by": session["user"]
         }
-        mongo.db.food_items.update({"_id": ObjectId(food_item_id)}, submit)
+        mongo.db.food_items.replace_one({"_id": ObjectId(food_item_id)}, submit)
         flash("Food Item Successfully Edited")
 
     food_item = mongo.db.food_items.find_one({"_id": ObjectId(food_item_id)})
     food_categories = mongo.db.food_categories.find().sort("category_name", 1)
     units = mongo.db.units.find().sort("unit_name", 1)    
     return render_template("edit_food_item.html", food_item=food_item, food_categories=food_categories, units=units)
+
+
+@app.route("/delete_food_item/<food_item_id>")
+def delete_food_item(food_item_id):
+    mongo.db.food_items.delete_one({"_id": ObjectId(food_item_id)})
+    flash("Food Item Successfully Deleted")
+    return redirect(url_for("get_food_items"))
 
 
 if __name__ == "__main__":
