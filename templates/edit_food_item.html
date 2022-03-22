@@ -11,7 +11,7 @@
                     <div class="input-field col s4">
                         <i class="fas fa-pencil-alt prefix teal-text text-darken-1"></i>
                         <input id="item_name" name="item_name" minlength="3" maxlength="25" 
-                            type="text" class="validate" required>
+                            value="{{ food_item.item_name }}" type="text" class="validate" required>
                         <label for="item_name">Food Item Name</label>
                     </div>
                 </span>
@@ -20,9 +20,13 @@
                     <div class="input-field col s3">
                         <i class="fas fa-folder prefix teal-text text-darken-1"></i>
                         <select id="category_name" name="category_name" class="validate" required>
-                            <option value="" disabled selected>Choose Category</option>
+                            <option value="" disabled>Choose Category</option>
                             {% for food_category in food_categories %}
-                                <option value="{{ food_category.category_name }}">{{ food_category.category_name }}</option>
+                                {% if food_category.category_name == food_item.category_name %}                                
+                                    <option value="{{ food_category.category_name }}" selected>{{ food_category.category_name }}</option>
+                                {% else %}
+                                    <option value="{{ food_category.category_name }}">{{ food_category.category_name }}</option>
+                                {% endif %}
                             {% endfor %}                        
                         </select>
                         <label for="category_name">Food Category</label>
@@ -34,7 +38,7 @@
                     <div class="input-field col s2">
                         <i class="fas fa-boxes-stacked prefix teal-text text-darken-1"></i>
                         <input id="in_stock" name="in_stock" minlength="1" maxlength="5" 
-                            type="text" class="validate" required>
+                            value="{{ food_item.in_stock }}"type="text" class="validate" required>
                         <label for="in_stock">In stock</label>
                     </div>
                     
@@ -46,7 +50,7 @@
                     <div class="input-field col s2">
                         <i class="fas fa-weight-hanging prefix teal-text text-darken-1"></i>
                         <input id="weight_or_quantity" name="weight_or_quantity" minlength="1" maxlength="4" 
-                            type="number" class="validate" required>
+                            value="{{ food_item.weight_or_quantity }}"type="number" class="validate" required>
                         <label for="weight_or_quantity">Weight/Quantity</label>
                     </div>
                 </span>
@@ -55,11 +59,14 @@
                     <div class="input-field col s2">
                         <i class="fas fa-weight-scale prefix teal-text text-darken-1"></i>
                         <select id="unit" name="unit" class="validate" required>
-                            <option value="" disabled selected>Choose Unit</option>
-                            <option value="g">g</option>
-                            <option value="kg">kg</option>
-                            <option value="ml">ml</option>
-                            <option value="l">l</option>
+                            <option value="" disabled>Choose Unit</option>
+                            {% for unit in units %}
+                                {% if unit.unit_name == food_item.unit %}
+                                    <option value="{{ unit.unit_name }}" selected>{{ unit.unit_name }}</option>
+                                {% else %}
+                                    <option value="{{ unit.unit_name }}">{{ unit.unit_name }}</option>
+                                {% endif %}
+                            {% endfor %}
                         </select>
                         <label for="unit">Units</label>
                     </div>

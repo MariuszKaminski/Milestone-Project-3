@@ -56,10 +56,9 @@
                         <i class="fas fa-weight-scale prefix teal-text text-darken-1"></i>
                         <select id="unit" name="unit" class="validate" required>
                             <option value="" disabled selected>Choose Unit</option>
-                            <option value="g">g</option>
-                            <option value="kg">kg</option>
-                            <option value="ml">ml</option>
-                            <option value="l">l</option>
+                            {% for unit in units %}
+                                <option value="{{ unit.unit_name }}">{{ unit.unit_name }}</option>
+                            {% endfor %}
                         </select>
                         <label for="unit">Units</label>
                     </div>

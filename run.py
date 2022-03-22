@@ -112,7 +112,8 @@ def add_food_item():
         return redirect(url_for("get_food_items"))
 
     food_categories = mongo.db.food_categories.find().sort("category_name", 1)
-    return render_template("add_food_item.html", food_categories=food_categories)
+    units = mongo.db.units.find().sort("unit_name", 1)
+    return render_template("add_food_item.html", food_categories=food_categories, units=units)
 
 
 @app.route("/logout")
@@ -127,7 +128,10 @@ def edit_food_item(food_item_id):
     food_item = mongo.db.food_items.find_one({"_id": ObjectId(food_item_id)})
 
     food_categories = mongo.db.food_categories.find().sort("category_name", 1)
-    return render_template("edit_food_item.html", food_item=food_item, food_categories=food_categories)
+
+    units = mongo.db.units.find().sort("unit_name", 1)
+    
+    return render_template("edit_food_item.html", food_item=food_item, food_categories=food_categories, units=units)
 
 
 if __name__ == "__main__":
