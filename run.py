@@ -157,6 +157,12 @@ def delete_food_item(food_item_id):
     return redirect(url_for("get_food_items"))
 
 
+@app.route("/get_categories")
+def get_food_categories():
+    food_categories = list(mongo.db.food_categories.find().sort("category_name", 1))
+    return render_template("food_categories.html", food_categories=food_categories)
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),
