@@ -175,6 +175,20 @@ def add_food_category():
 
     return render_template("add_food_category.html")
 
+
+@app.route("/edit_food_category/<food_category_id>", methods=["GET", "POST"])
+def edit_food_category(food_category_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("food_category_name")
+        }
+        mongo.db.food_categories.replace_one({"_id": ObjectId(food_category_id)}, submit)
+        flash("Category Successfully Updated")
+        return redirect(url_for("get_food_categories"))
+
+    food_category = mongo.db.food_categories.find_one({"_id": ObjectId(food_category_id)})
+    return render_template("edit_food_category.html", food_category=food_category)
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),

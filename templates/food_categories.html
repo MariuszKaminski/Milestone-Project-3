@@ -14,10 +14,10 @@
     <div class="col s12 m3">
         <div class="card teal darken-1 center-align">
             <div class="card-content white-text">
-                <span class="card-title">{{ food_category.category_name }}</span>                
+                <span class="card-title">{{ food_category.category_name }}</span>          
             </div>
             <div class="card-action">
-                <a href="#" class="waves-effect waves-light btn green darken-1">Edit</a>
+                <a href="{{ url_for('edit_food_category', food_category_id=food_category._id) }}" class="waves-effect waves-light btn green darken-1">Edit</a>
                 <a href="#" class="waves-effect waves-light btn red darken-1">Delete</a>
             </div>
         </div>
