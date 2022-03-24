@@ -3,6 +3,12 @@
 
 <h3 class="teal-text text-darken-1 center-align">Manage Food Categories</h3>
 
+<div class="row"></div>
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_food_category') }}" class="btn-large teal darken-1 text-shadow">
+            Add Category <i class="fas fa-plus-square right"></i>
+        </a>
+    </div>
 <div class="row">
     {% for food_category in food_categories %}
     <div class="col s12 m3">
