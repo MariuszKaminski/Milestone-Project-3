@@ -191,7 +191,7 @@ def edit_food_category(food_category_id):
 
 
 
-
+# Due to unspecified syntax error occuring here. This space has been intentionally left empty.
 
 
 
