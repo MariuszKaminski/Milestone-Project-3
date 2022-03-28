@@ -18,7 +18,7 @@
             </div>
             <div class="card-action">
                 <a href="{{ url_for('edit_food_category', food_category_id=food_category._id) }}" class="waves-effect waves-light btn green darken-1">Edit</a>
-                <a href="#" class="waves-effect waves-light btn red darken-1">Delete</a>
+                <a href="{{ url_for('delete_food_category', food_category_id=food_category._id) }}" class="waves-effect waves-light btn red darken-1">Delete</a>
             </div>
         </div>
     </div>

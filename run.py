@@ -189,6 +189,20 @@ def edit_food_category(food_category_id):
     food_category = mongo.db.food_categories.find_one({"_id": ObjectId(food_category_id)})
     return render_template("edit_food_category.html", food_category=food_category)
 
+
+
+
+
+
+
+
+@app.route("/delete_food_category/<food_category_id>")
+def delete_food_category(food_category_id):
+    mongo.db.food_categories.delete_one({"_id": ObjectId(food_category_id)})
+    flash("Food Category Successfully Deleted")
+    return redirect(url_for("get_food_categories"))
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),
