@@ -24,6 +24,13 @@ def get_food_items():
     food_items = mongo.db.food_items.find()
     return render_template("food_items.html", food_items=food_items)
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    food_items = list(mongo.db.food_items.find({"$text": {"$search": query}}))
+    return render_template("food_items.html", food_items=food_items)
+
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
