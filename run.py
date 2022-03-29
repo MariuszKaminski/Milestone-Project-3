@@ -28,6 +28,8 @@ def get_food_items():
 def search():
     query = request.form.get("query")
     food_items = list(mongo.db.food_items.find({"$text": {"$search": query}}))
+    if food_items == []:
+        flash("No Food Items Found !!!")
     return render_template("food_items.html", food_items=food_items)
 
 
