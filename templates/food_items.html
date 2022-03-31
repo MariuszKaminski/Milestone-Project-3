@@ -25,38 +25,48 @@
             {% for food_item in food_items %}
             <li>
                 <div class="row collapsible-header white-text teal darken-1 text-shadow">
-                    <div class="col s12 m8">                   
+                    <div class="col">                   
                         <span><i class="fas fa-caret-down"></i></span>   
                         <span><strong>{{ food_item.item_name }}</strong></span>
                         <span>Category: {{ food_item.category_name }}</span> 
                         <span>weight/quantity: {{ food_item.weight_or_quantity }}{{ food_item.unit }}</span>
                         <span>in stock: {{ food_item.in_stock }}</span>
                         <span>
+                            <em>Food item created by: {{ food_item.created_by }}</em>
+                        </span>
+                        <span>
                             {% if food_item.low_stock %}
                                 <i class="fas fa-exclamation-circle teal-text text-lighten-3"><span>LOW</span></i>
                             {% endif %}                        
                         </span>
-                    </div>
-                    <div class="col 12s m4">
-                        <span>
-                            <a class="waves-effect waves-light btn-small green darken-1">Increase Stock</a>
-                        </span>
-                        <span>
-                            <a class="waves-effect waves-light btn-small red darken-1 ">Decrease Stock</a>
-                        </span>
-                    </div>
-                    
+                    </div>                    
                 </div>
                 {% if session.user %}
                 <div class="collapsible-body">
-                    <span>
-                        <em>Food item created by: {{ food_item.created_by }}</em>
-                    </span>
-                    <span>
-                        <a href="{{ url_for('delete_food_item', food_item_id=food_item._id) }}" class="waves-effect waves-light btn-small teal darken-1">Delete Item</a>
-                    <span>
-                        <a href="{{ url_for('edit_food_item', food_item_id=food_item._id) }}" class="waves-effect waves-light btn-small teal darken-1">Edit Item</a>
-                    </span>                    
+                    <div class="row">
+                        <div class="col m4">                    
+                            <span>
+                                <a href="{{ url_for('delete_food_item', food_item_id=food_item._id) }}" class="waves-effect waves-light btn-small teal darken-1">Delete Item</a>
+                            </span>
+                            <span>
+                                <a href="{{ url_for('edit_food_item', food_item_id=food_item._id) }}" class="waves-effect waves-light btn-small teal darken-1">Edit Item</a>
+                            </span>
+                        </div>
+                        <div class="col m8">                    
+                            <form>            
+                                <div class="input-field col s4">
+                                    <input id="first_name" type="number" class="validate">
+                                    <label for="first_name">No. of items</label>
+                                    <a class="waves-effect waves-light btn-small green darken-1">Increase Stock</a>
+                                </div>
+                                <div class="input-field col s4">                                    
+                                    <input id="last_name" type="number" class="validate">
+                                    <label for="last_name">No. of items</label>
+                                    <a class="waves-effect waves-light btn-small red darken-1 ">Decrease Stock</a>
+                                </div>                          
+                            </form>
+                        </div>
+                    </div>                    
                 {% endif %}        
                 </div>
             </li>

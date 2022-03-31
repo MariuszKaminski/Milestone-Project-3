@@ -9,3 +9,12 @@
 .collapsible span {
     margin-left:20px;
 }
+
+.stock_button {
+    width: 60px;
+    text-align: middle;
+}
+
+.stock_input {
+    width:max-content;
+}
