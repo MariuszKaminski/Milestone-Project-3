@@ -213,23 +213,79 @@ def delete_food_category(food_category_id):
 
 
 @app.route("/increase_stock/<food_item_id>", methods=["GET", "POST"])
-def increase_stock(food_item_id):    
+def increase_stock(food_item_id):
+        
     if request.method == "POST":
-        existing_stock = mongo.db.food_items.find_one({"in_stock": 1})
+        food_item = mongo.db.food_items.find_one({"_id": ObjectId(food_item_id)})
+        existing_name = food_item.get('item_name')
+        existing_category = food_item.get('category_name')
+        existing_stock = food_item.get('in_stock')
+        existing_weight_or_quantity = food_item.get('weight_or_quantity')
+        existing_unit = food_item.get('unit')
+        existing_user = food_item.get('created_by')
+
         increase = request.form.get("increase")
         int_increase = int(increase)
         
         new_stock = existing_stock + int_increase
+               
+        #stock_int = int(stock)
+        low_stock = False
+        if new_stock <= 10:
+            low_stock = True
 
-        submit = {            
-            "in_stock": new_stock,            
+        submit = {
+            "item_name": existing_name,
+            "category_name": existing_category,            
+            "in_stock": new_stock,
+            "weight_or_quantity": existing_weight_or_quantity,
+            "unit": existing_unit,
+            "low_stock": low_stock,
+            "created_by": existing_user            
         }
         mongo.db.food_items.replace_one({"_id": ObjectId(food_item_id)}, submit)
         flash("Food Stock Successfully Increased")
-
-    food_item = mongo.db.food_items.find_one({"_id": ObjectId(food_item_id)})
     
-    return render_template("food_items.html", food_item=food_item)
+    return redirect(url_for("get_food_items"))
+
+
+@app.route("/decrease_stock/<food_item_id>", methods=["GET", "POST"])
+def decrease_stock(food_item_id):
+        
+    if request.method == "POST":
+        food_item = mongo.db.food_items.find_one({"_id": ObjectId(food_item_id)})
+        existing_name = food_item.get('item_name')
+        existing_category = food_item.get('category_name')
+        existing_stock = food_item.get('in_stock')
+        existing_weight_or_quantity = food_item.get('weight_or_quantity')
+        existing_unit = food_item.get('unit')
+        existing_user = food_item.get('created_by')
+
+        decrease = request.form.get("decrease")
+        int_decrease = int(decrease)
+        
+        new_stock = existing_stock - int_decrease
+        if int_decrease > existing_stock:
+            flash("No of items deducted greater than availabe stock. Please amend the stock!")
+            return redirect(url_for("get_food_items"))
+        elif int_decrease <= existing_stock:
+            low_stock = False
+            if new_stock <= 10:
+                low_stock = True
+
+            submit = {
+                "item_name": existing_name,
+                "category_name": existing_category,            
+                "in_stock": new_stock,
+                "weight_or_quantity": existing_weight_or_quantity,
+                "unit": existing_unit,
+                "low_stock": low_stock,
+                "created_by": existing_user            
+            }
+            mongo.db.food_items.replace_one({"_id": ObjectId(food_item_id)}, submit)
+            flash("Food Stock Successfully Decreased")
+    
+    return redirect(url_for("get_food_items"))
 
 
 if __name__ == "__main__":

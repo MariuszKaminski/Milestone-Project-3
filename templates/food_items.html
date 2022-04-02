@@ -56,16 +56,16 @@
                             <form method="POST" action="{{ url_for('increase_stock', food_item_id=food_item._id) }}">
                                 <div class="input-field col s4">
                                     <input id="increase" name="increase" minlength="1" maxlength="6" type="number" class="validate">
-                                    <label for="increase">No. of items</label>
+                                    <label for="increase">No of items</label>
                                     <button type="submit" class="waves-effect waves-light btn-large green darken-1">
                                         Increase Stock <i class="fas fa-plus-square right"></i>
                                     </button>                                    
                                 </div>
                             </form>
-                            <form method="POST" action="">
+                            <form method="POST" action="{{ url_for('decrease_stock', food_item_id=food_item._id) }}">
                                 <div class="input-field col s4">                                    
                                     <input id="decrease" name="decrease" minlength="1" maxlength="6" type="number" class="validate">
-                                    <label for="decrease">No. of items</label>
+                                    <label for="decrease">No of items</label>
                                     <button type="submit" class="waves-effect waves-light btn-large red darken-1 ">
                                         Decrease Stock <i class="fas fa-minus-square right"></i>
                                     </button>                                    
