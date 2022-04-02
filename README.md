@@ -2,7 +2,7 @@
 
 [View the live project here.](https://example.net)
 
-## This is a web based application designed for the staff members of a local food bank to serve as a tool for stock keeping.
+## This is a web based application designed for the staff members of a local food bank to serve as a tool for basic stock keeping.
 
 <h2 align="center"><img src="htttp://example.png"></h2>
 
@@ -31,6 +31,7 @@
 -   ### Design
 
     -   #### Color Scheme
+        -   The website's two main colours are teal and white. The buttons have their distinctive and contrasting colours to visually hint at their function.
 
     -   #### Typography
 
