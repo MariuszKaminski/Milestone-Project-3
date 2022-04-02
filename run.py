@@ -212,6 +212,26 @@ def delete_food_category(food_category_id):
     return redirect(url_for("get_food_categories"))
 
 
+@app.route("/increase_stock/<food_item_id>", methods=["GET", "POST"])
+def increase_stock(food_item_id):    
+    if request.method == "POST":
+        existing_stock = mongo.db.food_items.find_one({"in_stock": 1})
+        increase = request.form.get("increase")
+        int_increase = int(increase)
+        
+        new_stock = existing_stock + int_increase
+
+        submit = {            
+            "in_stock": new_stock,            
+        }
+        mongo.db.food_items.replace_one({"_id": ObjectId(food_item_id)}, submit)
+        flash("Food Stock Successfully Increased")
+
+    food_item = mongo.db.food_items.find_one({"_id": ObjectId(food_item_id)})
+    
+    return render_template("food_items.html", food_item=food_item)
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),
