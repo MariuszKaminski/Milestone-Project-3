@@ -31,11 +31,13 @@
 -   ### Design
 
     -   #### Color Scheme
-        -   The website's two main colours are teal and white. The buttons have their distinctive and contrasting colours to visually hint at their function.
+        -   The application's two main colours are teal and white. The buttons have their distinctive and contrasting colours to visually hint at their function.
 
     -   #### Typography
+        -   The font of choice for the application is Lato Google font with Sans-Serif as backup.
 
     -   #### Imagery
+        -   The Background image is referring to the purpose of the application. Icons hint at various features and CRUD functionalities.
 
 *   ### Wireframes
 
