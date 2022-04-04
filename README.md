@@ -80,4 +80,14 @@
 1. [GitHub:](https://github.com/)
     - GitHub is used to store the projects code after being pushed from Git.
 1. [MongoDB:](https://www.mongodb.com/)
-    - MongoDB is used to provide the application with a database where the data saved by the users can be stored and edited
+    - MongoDB is used to provide the application with a database where the data saved by the users can be stored and edited.
+1. [diagrams.net:](https://app.diagrams.net/)
+    - Web based application diagrams.net is used to create wireframes during the design stage of the project.
+
+## Testing
+
+The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
+
+-   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
+-   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
+
