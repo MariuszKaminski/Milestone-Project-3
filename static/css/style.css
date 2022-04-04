@@ -19,6 +19,7 @@ body h3 {
 
 .flashes h4 {
     line-height: 2;
+    background-color: teal;
 }
 
 .collapsible span {
