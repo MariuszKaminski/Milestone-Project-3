@@ -91,3 +91,35 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 -   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
 -   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
 
+### Testing User Stories from User Experience (UX) Section
+
+-   #### First Time Visitor Goals
+
+    1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the organization.
+
+    2. Aa a First Time Visitor, I want to be able to easily navigate throughout the site to find content.
+
+-   #### Returning Visitor Goals
+
+-   #### Frequent User Goals
+
+### Further Testing
+
+-   The website was tested on Google Chrome, Internet Explorer and Microsoft Edge.
+-   The website was viewed on a variety of devices such as Desktop, Laptop and Android phone.
+-   A large amount of testing was done to ensure that all pages were linking correctly.
+
+### Known Bugs
+
+## Deployment
+
+## Credits
+
+### Code
+
+### Content
+
+### Media
+
+### Acknowledgements
+
