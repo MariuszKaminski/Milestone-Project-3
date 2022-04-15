@@ -40,6 +40,9 @@
         -   The Background image is referring to the purpose of the application. Icons hint at various features and CRUD functionalities.
 
 *   ### Wireframes
+    -   Atribute schema [View](/static/img/Homepage.png)
+
+    -   Relationship diagram (ERD) [View](/static/img/Homepage.png)
 
     -   Homepage (Visitor's view) [View](/static/img/Homepage.png)
 
@@ -54,8 +57,8 @@
 - Responsive on all device screen sizes
 
 - Interactive elements 
-        - Actions involving login, using CRUD functionalities and editing food items are confirmed with feedback messages [View](/static/img/feedback_message.png) 
-        - Fow stock warning is triggered if a given item's inventory value is 10 or less [View](/static/img/low_stock_warning.png)
+    -   Actions involving login, using CRUD functionalities and editing food items are confirmed Swith feedback messages [View](/static/img/feedback_message.png) 
+    - Low stock warning is triggered if item's inventory value is 10 or less [View](/static/img/low_stock_warning.png)
 
 - CRUD functionalities
 

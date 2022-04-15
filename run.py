@@ -152,6 +152,7 @@ def edit_food_item(food_item_id):
         }
         mongo.db.food_items.replace_one({"_id": ObjectId(food_item_id)}, submit)
         flash("Food Item Successfully Edited")
+        return redirect(url_for("get_food_items"))
 
     food_item = mongo.db.food_items.find_one({"_id": ObjectId(food_item_id)})
     food_categories = mongo.db.food_categories.find().sort("category_name", 1)
