@@ -53,7 +53,9 @@
 
 - Responsive on all device screen sizes
 
-- Interactive elements (feedback messages, low stock warning)
+- Interactive elements 
+        - feedback messages [View](/static/img/Homepage.png) 
+        - low stock warning [View](/static/img/Homepage.png)
 
 - CRUD functionalities
 
