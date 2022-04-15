@@ -54,8 +54,8 @@
 - Responsive on all device screen sizes
 
 - Interactive elements 
-        - feedback messages [View](/static/img/Homepage.png) 
-        - low stock warning [View](/static/img/Homepage.png)
+        - Actions involving login, using CRUD functionalities and editing food items are confirmed with feedback messages [View](/static/img/feedback_message.png) 
+        - Fow stock warning is triggered if a given item's inventory value is 10 or less [View](/static/img/low_stock_warning.png)
 
 - CRUD functionalities
 
@@ -90,8 +90,9 @@
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
--   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results]()
+-   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](/static/img/W3C_markup_validator.PNG)
+    The errors revealed are all related to the use of Flask values in curly brackets and Jinga templating language expressions.
+-   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](/static/img/W3C_CSS_validator.PNG)
 
 ### Testing User Stories from User Experience (UX) Section
 
