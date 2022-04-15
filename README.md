@@ -90,7 +90,7 @@
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
--   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](/static/img/W3C_markup_validator.PNG)
+-   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](/static/img/W3C_markup_validator.PNG) <br>
     The errors revealed are all related to the use of Flask values in curly brackets and Jinga templating language expressions.
 -   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](/static/img/W3C_CSS_validator.PNG)
 
@@ -107,7 +107,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 -   #### Frequent User Goals
 
 ### Further Testing
-
+-   Black box testing schedule. [View]()
 -   The website was tested on Google Chrome, Internet Explorer and Microsoft Edge.
 -   The website was viewed on a variety of devices such as Desktop, Laptop and Android phone.
 -   A large amount of testing was done to ensure that all pages were linking correctly.
@@ -119,10 +119,13 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 ## Credits
 
 ### Code
+-   The code has been largely adapted form [Code Institute's](https://codeinstitute.net/) 'Mini Project' tutorial in 'Backend Development section' by [Tim Nelson](https://github.com/TravelTimN).
 
 ### Content
+-   All content was written by the developer.
 
 ### Media
+-   Background image for the app is a free stock photo by Aaron Doucett found at [Unsplash](https://unsplash.com/photos/liOAS02GnfY)
 
 ### Acknowledgements
 
