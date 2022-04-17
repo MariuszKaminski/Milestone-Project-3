@@ -14,19 +14,17 @@
 
         1. As a First Time User, I want to easily understand the main purpose of the web app.
         2. As a First Time User, I want to have access to basic functionaities. 
-        3. As a First Time User, I want to be able to register to gain access to more functionalities
+        3. As a First Time User, I want to be able to register to gain access to more advanced functionalities
     
     -   #### Returning Visitor Goals
 
         1. As a Returning User, I want to be able to log into my profile.
         2. As a Returning User, I want to be able modify data and edit the app content.
-        3. As a Returning User, I want to
     
     -   #### Frequent User Goals
 
         1. As a Frequent User, I want to the app to safely store and retrieve data.        
         2. As a Frequent User, I want to the app to be fast and efficient.
-        3. As a Frequent User, I want to
 
 -   ### Design
 
@@ -101,13 +99,19 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 -   #### First Time Visitor Goals
 
-    1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the organization.
-
-    2. Aa a First Time Visitor, I want to be able to easily navigate throughout the site to find content.
+    1. As a First Time User I can clearly distinugish the main sections of the web app's home page, the header with the app's name as well as buttons for registration and login. Below there is a search section and furter down a simple food item list.
+    2. As a First Time User, I can perform searches and have access to such data as available stock size.
+    3. As a First Time User, I've been able to register and create my profile giving me access to more advanced functionalities.
 
 -   #### Returning Visitor Goals
 
+    1. As a Returning User, I've been able to log into the app.
+    2. As a Returning User, while being logged in I've been able to add, delete and edit particular food items as needed.
+
 -   #### Frequent User Goals
+
+    1. As a Frequent User, I'm aware that all the data in the app is stored in a cloud storage service and can be accessed only by authorized staff.
+    2. As a Frequent User, I've been able to quickly update the just by clicking an item in the list and inputing figures in appropriate field.
 
 ### Further Testing
 -   Black box testing schedule. [View](https://docs.google.com/document/d/1Xp4ro9cAy7-rdSsMTUlwHNvY8mwdun3R/edit?usp=sharing&ouid=113273292568686929472&rtpof=true&sd=true)
@@ -131,5 +135,5 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 -   Background image for the app is a free stock photo by Aaron Doucett found at [Unsplash](https://unsplash.com/photos/liOAS02GnfY)
 
 ### Acknowledgements
--   Also many thanks to my Harlow College tutor Patrick Justus who provided me with some input on black box testing, database schema and ERD.
+-   Also many thanks to my Harlow College tutor Patrick Justus Phd who provided me with input on black box testing, database schema and ERD.
 

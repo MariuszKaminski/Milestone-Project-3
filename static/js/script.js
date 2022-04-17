@@ -1,6 +1,6 @@
 // code for initializing Materializecss.com plugins
 
-$(document).ready(function () {
+$(document).ready(function(){
   $(".sidenav").sidenav({edge: "right"});
   $(".collapsible").collapsible();
   $(".tooltipped").tooltip();
@@ -12,7 +12,7 @@ $(document).ready(function () {
       i18n: {
           done: "Select"
       }
-  });
+});
 
 // code for validating select dropdown lists copied form Mini Project at Code Institute
 
