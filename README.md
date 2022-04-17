@@ -10,22 +10,22 @@
 
 -   ### User stories
 
-    -   #### First Time Visitor Goals
+    -   #### First Time User Goals
 
-        1. As a First Time Visitor, I want to
-        2. As a First Time Visitor, I want to
-        3. As a First Time Visitor, I want to
+        1. As a First Time User, I want to easily understand the main purpose of the web app.
+        2. As a First Time User, I want to have access to basic functionaities. 
+        3. As a First Time User, I want to be able to register to gain access to more functionalities
     
     -   #### Returning Visitor Goals
 
-        1. As a Returning Visitor, I want to
-        2. As a Returning Visitor, I want to
-        3. As a Returning Visitor, I want to
+        1. As a Returning User, I want to be able to log into my profile.
+        2. As a Returning User, I want to be able modify data and edit the app content.
+        3. As a Returning User, I want to
     
     -   #### Frequent User Goals
 
-        1. As a Frequent User, I want to
-        2. As a Frequent User, I want to
+        1. As a Frequent User, I want to the app to safely store and retrieve data.        
+        2. As a Frequent User, I want to the app to be fast and efficient.
         3. As a Frequent User, I want to
 
 -   ### Design
@@ -40,9 +40,9 @@
         -   The Background image is referring to the purpose of the application. Icons hint at various features and CRUD functionalities.
 
 *   ### Wireframes
-    -   Atribute schema [View](/static/img/Homepage.png)
+    -   Atribute schema [View](/static/img/Database_schema.PNG)
 
-    -   Relationship diagram (ERD) [View](/static/img/Homepage.png)
+    -   Relationship diagram (ERD) [View](/static/img/Relationship_diagram_(ERD).PNG)
 
     -   Homepage (Visitor's view) [View](/static/img/Homepage.png)
 
@@ -110,7 +110,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 -   #### Frequent User Goals
 
 ### Further Testing
--   Black box testing schedule. [View]()
+-   Black box testing schedule. [View](https://docs.google.com/document/d/1Xp4ro9cAy7-rdSsMTUlwHNvY8mwdun3R/edit?usp=sharing&ouid=113273292568686929472&rtpof=true&sd=true)
 -   The website was tested on Google Chrome, Internet Explorer and Microsoft Edge.
 -   The website was viewed on a variety of devices such as Desktop, Laptop and Android phone.
 -   A large amount of testing was done to ensure that all pages were linking correctly.
@@ -122,7 +122,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 ## Credits
 
 ### Code
--   The code has been largely adapted form [Code Institute's](https://codeinstitute.net/) 'Mini Project' tutorial in 'Backend Development section' by [Tim Nelson](https://github.com/TravelTimN).
+-   The code has been largely adapted form [Code Institute's](https://codeinstitute.net/) 'Mini Project' tutorial in 'Backend Development' section by [Tim Nelson](https://github.com/TravelTimN).
 
 ### Content
 -   All content was written by the developer.
@@ -131,4 +131,5 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 -   Background image for the app is a free stock photo by Aaron Doucett found at [Unsplash](https://unsplash.com/photos/liOAS02GnfY)
 
 ### Acknowledgements
+-   Also many thanks to my Harlow College tutor Patrick Justus who provided me with some input on black box testing, database schema and ERD.
 
