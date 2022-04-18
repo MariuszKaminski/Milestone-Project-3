@@ -1,10 +1,12 @@
-<h1 align="center">Stock Manager<h1>
+<h1 align="center">FOOD BANK MANAGER<h1>
 
-[View the live project here.](https://example.net)
+<p align="center">
+    <a href="https://food-bank-manager.herokuapp.com/">View the live project here.</a>
+</p>
 
 ## This is a web based application designed for the staff members of a local food bank to serve as a tool for basic stock keeping.
 
-<h2 align="center"><img src="htttp://example.png"></h2>
+<h2 align="center"><img src="https://i.ibb.co/0tRh3g5/responsive-design.png"></h2>
 
 -   ## User Experience (UX)
 
@@ -122,6 +124,11 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 ### Known Bugs
 
 ## Deployment
+
+-   The app files have been manually deployed from a GitHub repository to a newly created Heroku app. The following commands have been executed in a Gitpod bash terminal:<br>
+    1.  heroku login -i
+    2.  heroku create app_name_here
+    3.  git push heroku main
 
 ## Credits
 
