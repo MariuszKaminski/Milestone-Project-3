@@ -123,6 +123,8 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ### Known Bugs
 
+-   Decrease and increase stock items fields need to be clicked near the bottom edge otherwise they can't be accessed. 
+
 ## Deployment
 
 -   The app files have been manually deployed from a GitHub repository to a newly created Heroku app. The following commands have been executed in a Gitpod bash terminal:<br>

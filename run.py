@@ -229,8 +229,9 @@ def increase_stock(food_item_id):
         int_increase = int(increase)
         
         new_stock = existing_stock + int_increase
-               
-        #stock_int = int(stock)
+        
+        #low stock warning logic
+
         low_stock = False
         if new_stock <= 10:
             low_stock = True
