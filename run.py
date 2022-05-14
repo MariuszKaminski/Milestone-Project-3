@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template, 
+    Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -23,6 +23,7 @@ mongo = PyMongo(app)
 def get_food_items():
     food_items = mongo.db.food_items.find()
     return render_template("food_items.html", food_items=food_items)
+
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -67,7 +68,7 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                    existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(
                         request.form.get("username")))
@@ -122,9 +123,7 @@ def add_food_item():
     food_categories = mongo.db.food_categories.find().sort("category_name", 1)
     units = mongo.db.units.find().sort("unit_name", 1)
     return render_template(
-        "add_food_item.html",
-        food_categories=food_categories,
-        units=units
+        "add_food_item.html", food_categories=food_categories, units=units
     )
 
 
@@ -135,8 +134,9 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+
 @app.route("/edit_food_item/<food_item_id>", methods=["GET", "POST"])
-def edit_food_item(food_item_id):    
+def edit_food_item(food_item_id):
     if request.method == "POST":
         stock = request.form.get("in_stock")
         stock_int = int(stock)
@@ -161,13 +161,13 @@ def edit_food_item(food_item_id):
 
     food_item = mongo.db.food_items.find_one({"_id": ObjectId(food_item_id)})
     food_categories = mongo.db.food_categories.find().sort("category_name", 1)
-    units = mongo.db.units.find().sort("unit_name", 1)    
+    units = mongo.db.units.find().sort("unit_name", 1)
     return render_template(
-        "edit_food_item.html", 
+        "edit_food_item.html",
         food_item=food_item,
         food_categories=food_categories,
         units=units
-    )
+        )
 
 
 @app.route("/delete_food_item/<food_item_id>")
@@ -179,8 +179,12 @@ def delete_food_item(food_item_id):
 
 @app.route("/get_categories")
 def get_food_categories():
-    food_categories = list(mongo.db.food_categories.find().sort("category_name", 1))
-    return render_template("food_categories.html", food_categories=food_categories)
+    food_categories = list(
+        mongo.db.food_categories.find().sort("category_name", 1)
+    )
+    return render_template(
+        "food_categories.html", food_categories=food_categories
+    )
 
 
 @app.route("/add_food_category", methods=["GET", "POST"])
@@ -202,7 +206,9 @@ def edit_food_category(food_category_id):
         submit = {
             "category_name": request.form.get("food_category_name")
         }
-        mongo.db.food_categories.replace_one({"_id": ObjectId(food_category_id)}, submit)
+        mongo.db.food_categories.replace_one(
+            {"_id": ObjectId(food_category_id)}, submit
+        )
         flash("Category Successfully Updated")
         return redirect(url_for("get_food_categories"))
 
@@ -210,16 +216,8 @@ def edit_food_category(food_category_id):
         {"_id": ObjectId(food_category_id)}
     )
     return render_template(
-        "edit_food_category.html",
-        food_category=food_category
+        "edit_food_category.html", food_category=food_category
     )
-
-
-
-# Due to unspecified syntax error occuring here. 
-# This space has been intentionally left empty.
-
-
 
 
 @app.route("/delete_food_category/<food_category_id>")
@@ -231,7 +229,6 @@ def delete_food_category(food_category_id):
 
 @app.route("/increase_stock/<food_item_id>", methods=["GET", "POST"])
 def increase_stock(food_item_id):
-        
     if request.method == "POST":
         food_item = mongo.db.food_items.find_one(
             {"_id": ObjectId(food_item_id)}
@@ -245,35 +242,30 @@ def increase_stock(food_item_id):
 
         increase = request.form.get("increase")
         int_increase = int(increase)
-        
         new_stock = existing_stock + int_increase
-        
-        #low stock warning logic
-
+        # low stock warning logic
         low_stock = False
         if new_stock <= 10:
             low_stock = True
 
         submit = {
             "item_name": existing_name,
-            "category_name": existing_category,            
+            "category_name": existing_category,
             "in_stock": new_stock,
             "weight_or_quantity": existing_weight_or_quantity,
             "unit": existing_unit,
             "low_stock": low_stock,
-            "created_by": existing_user            
+            "created_by": existing_user
         }
         mongo.db.food_items.replace_one(
             {"_id": ObjectId(food_item_id)}, submit
         )
         flash("Food Stock Successfully Increased")
-    
     return redirect(url_for("get_food_items"))
 
 
 @app.route("/decrease_stock/<food_item_id>", methods=["GET", "POST"])
 def decrease_stock(food_item_id):
-        
     if request.method == "POST":
         food_item = mongo.db.food_items.find_one(
             {"_id": ObjectId(food_item_id)}
@@ -284,10 +276,8 @@ def decrease_stock(food_item_id):
         existing_weight_or_quantity = food_item.get('weight_or_quantity')
         existing_unit = food_item.get('unit')
         existing_user = food_item.get('created_by')
-
         decrease = request.form.get("decrease")
         int_decrease = int(decrease)
-        
         new_stock = existing_stock - int_decrease
         if int_decrease > existing_stock:
             flash("No of items deducted greater than availabe stock.")
@@ -296,21 +286,20 @@ def decrease_stock(food_item_id):
             low_stock = False
             if new_stock <= 10:
                 low_stock = True
-
             submit = {
                 "item_name": existing_name,
-                "category_name": existing_category,            
+                "category_name": existing_category,
                 "in_stock": new_stock,
                 "weight_or_quantity": existing_weight_or_quantity,
                 "unit": existing_unit,
                 "low_stock": low_stock,
-                "created_by": existing_user            
+                "created_by": existing_user
             }
             mongo.db.food_items.replace_one(
                 {"_id": ObjectId(food_item_id)}, submit
             )
             flash("Food Stock Successfully Decreased")
-    
+
     return redirect(url_for("get_food_items"))
 
 
